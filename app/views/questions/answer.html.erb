@@ -1,0 +1,29 @@
+<div class='container'>
+
+<h1>Stupid coaching</h1>
+
+
+<div class='user-box'>
+  <p>You say: </p><div><%= @answer %></div>
+</div>
+
+<% if @answer == 'I am going to work right now!'%>
+  <div class='coach-box'>
+    <p>Your coach says: </p><div><%= "Great" %></div>
+  </div>
+
+<% elsif @answer.include? "?" %>
+  <div class='coach-box'>
+    <p>Your coach says: </p><div><%= "Silly question, get dressed and go to work!" %></div>
+  </div>
+
+<% else %>
+  <div class='coach-box'>
+    <p>Your coach says: </p><div><%= "I don't care, get dressed and go to work!" %></div>
+  </div>
+
+<% end %>
+
+<%= link_to "Ask a new question", ask_path %>
+
+</div>
